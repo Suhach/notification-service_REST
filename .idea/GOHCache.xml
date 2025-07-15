@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GoORMHelperCache">
+    <option name="schemaMapping">
+      <map>
+        <entry key="CreateNotificationDTO">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/dto/notification.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CreateNotificationDTOReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CreateNotificationDTORes">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Error400">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Error401">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Error403">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Error422">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Error500">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetNotificationByUUIDDTORes">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetNotificationUuidRequestObject">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetNotificationsRequestObject">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetNotificationsResponseDTO">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GinServerOptions">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="NotificaitonCache">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/pkg/redisEM/redis.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="NotificaitonProducer">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/pkg/kafkaNP/kafka.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="NotificaitonService">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/service/notificaiton.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Notification">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/domain/notification.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="NotificationEntity">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/entity/notification.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="NotificationHandler">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handlers/notification.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="NotificationRepository">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/repository/notification.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="NotificationResponseDTO">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/dto/notification.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="PatchNotificationUuidRequestObject">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="PostNotificationsRequestObject">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ServerInterfaceWrapper">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateNotificationDTOReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateNotificationDTORes">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="strictHandler">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="scannedPathMapping">
+      <map>
+        <entry key="file://$PROJECT_DIR$/cmd/app/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752558912470" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/database/postgres/db.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752560601566" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/domain/notification.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752393630030" />
+              <option name="schema">
+                <list>
+                  <option value="Notification" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/dto/notification.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752393630087" />
+              <option name="schema">
+                <list>
+                  <option value="CreateNotificationDTO" />
+                  <option value="NotificationResponseDTO" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/entity/notification.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752393630022" />
+              <option name="schema">
+                <list>
+                  <option value="NotificationEntity" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/handlers/notification.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752414485336" />
+              <option name="schema">
+                <list>
+                  <option value="NotificationHandler" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/notification/mappers.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752399442141" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/ogenerated/api.gen.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752392412263" />
+              <option name="schema">
+                <list>
+                  <option value="CreateNotificationDTOReq" />
+                  <option value="CreateNotificationDTORes" />
+                  <option value="Error400" />
+                  <option value="Error401" />
+                  <option value="Error403" />
+                  <option value="Error422" />
+                  <option value="Error500" />
+                  <option value="GetNotificationByUUIDDTORes" />
+                  <option value="GetNotificationsResponseDTO" />
+                  <option value="UpdateNotificationDTOReq" />
+                  <option value="UpdateNotificationDTORes" />
+                  <option value="ServerInterfaceWrapper" />
+                  <option value="GinServerOptions" />
+                  <option value="GetNotificationUuidRequestObject" />
+                  <option value="PatchNotificationUuidRequestObject" />
+                  <option value="GetNotificationsRequestObject" />
+                  <option value="PostNotificationsRequestObject" />
+                  <option value="strictHandler" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/repository/notification.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752414485319" />
+              <option name="schema">
+                <list>
+                  <option value="NotificationRepository" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/service/notificaiton.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752499527117" />
+              <option name="schema">
+                <list>
+                  <option value="NotificaitonService" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/pkg/kafkaNP/kafka.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752429616486" />
+              <option name="schema">
+                <list>
+                  <option value="NotificaitonProducer" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/pkg/logger/logger.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752229583364" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/pkg/prometheus/prometheus.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752426896383" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/pkg/redisEM/redis.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752399840893" />
+              <option name="schema">
+                <list>
+                  <option value="NotificaitonCache" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="tableStructMapping">
+      <map>
+        <entry key="create_notification_dto" value="CreateNotificationDTO" />
+        <entry key="create_notification_dto_req" value="CreateNotificationDTOReq" />
+        <entry key="create_notification_dto_res" value="CreateNotificationDTORes" />
+        <entry key="error400" value="Error400" />
+        <entry key="error401" value="Error401" />
+        <entry key="error403" value="Error403" />
+        <entry key="error422" value="Error422" />
+        <entry key="error500" value="Error500" />
+        <entry key="get_notification_by_uuiddto_res" value="GetNotificationByUUIDDTORes" />
+        <entry key="get_notification_uuid_request_object" value="GetNotificationUuidRequestObject" />
+        <entry key="get_notifications_request_object" value="GetNotificationsRequestObject" />
+        <entry key="get_notifications_response_dto" value="GetNotificationsResponseDTO" />
+        <entry key="gin_server_options" value="GinServerOptions" />
+        <entry key="notificaiton_cache" value="NotificaitonCache" />
+        <entry key="notificaiton_producer" value="NotificaitonProducer" />
+        <entry key="notificaiton_service" value="NotificaitonService" />
+        <entry key="notification" value="Notification" />
+        <entry key="notification_entity" value="NotificationEntity" />
+        <entry key="notification_handler" value="NotificationHandler" />
+        <entry key="notification_repository" value="NotificationRepository" />
+        <entry key="notification_response_dto" value="NotificationResponseDTO" />
+        <entry key="patch_notification_uuid_request_object" value="PatchNotificationUuidRequestObject" />
+        <entry key="post_notifications_request_object" value="PostNotificationsRequestObject" />
+        <entry key="server_interface_wrapper" value="ServerInterfaceWrapper" />
+        <entry key="strict_handler" value="strictHandler" />
+        <entry key="update_notification_dto_req" value="UpdateNotificationDTOReq" />
+        <entry key="update_notification_dto_res" value="UpdateNotificationDTORes" />
+      </map>
+    </option>
+    <option name="lastTimeChecked" value="1752495404599" />
+  </component>
+</project>

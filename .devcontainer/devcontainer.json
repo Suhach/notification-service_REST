@@ -1,0 +1,9 @@
+{
+  "name": "Go Dev Container",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [2345],
+  "mounts": [],
+  "postCreateCommand": "go mod tidy"
+}

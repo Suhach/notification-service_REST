@@ -1,0 +1,316 @@
+openapi: 3.0.0
+info:
+  title: Notification API
+  version: 1.0.0
+paths:
+  /notifications:
+    post:
+      summary: Create notification
+      tags:
+        - notification
+      requestBody:
+        required: true
+        content:
+          application/json:
+              schema:
+                $ref: '#/components/schemas/CreateNotificationDTOReq'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateNotificationDTORes'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error400'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error403'
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error422'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+    get:
+      summary: List notifications
+      tags:
+        - notification
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetNotificationsResponseDTO'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error400'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error403'
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error422'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+  /notification/{uuid}:
+    get:
+      summary: Get notification
+      description: Get notification by uuid
+      tags:
+        - notification
+      parameters:
+        - name: uuid
+          in: path
+          required: true
+          description: uuid of notification
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: notification bu uuid
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetNotificationByUUIDDTORes'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error400'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error403'
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error422'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+
+    patch:
+      summary: Update notification
+      description: Update notification status to seen
+      tags:
+        - notification
+      parameters:
+        - name: uuid
+          in: path
+          required: true
+          description: uuid of notification
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateNotificationDTOReq'
+      responses:
+        '200':
+          description: Notification marked as read
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateNotificationDTORes'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error400'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error403'
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error422'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+
+components:
+  schemas:
+    CreateNotificationDTOReq:
+      type: object
+      required: [ user_id, message ]
+      properties:
+          user_id:
+            type: string
+            format: uuid
+          message:
+            type: string
+            example: test message
+    CreateNotificationDTORes:
+      type: object
+      properties:
+          notification_uuid:
+            type: string
+            format: uuid
+    GetNotificationsResponseDTO:
+        type: object
+        properties:
+          notification_uuid:
+            type: string
+            format: uuid
+          user_id:
+            type: string
+            format: uuid
+          message:
+            type: string
+            example: sample of a message
+          status:
+            type: string
+            example: sent/seen
+          created_at:
+              type: string
+              format: date-time
+    GetNotificationByUUIDDTORes:
+        type: object
+        properties:
+          notification_uuid:
+            type: string
+            format: uuid
+          user_id:
+            type: string
+            format: uuid
+          message:
+            type: string
+            example: sample of a message
+          status:
+            type: string
+            example: sent/seen
+          created_at:
+            type: string
+            format: date-time
+    UpdateNotificationDTOReq:
+        type: object
+        properties:
+          uuid:
+            type: string
+            format: uuid
+    UpdateNotificationDTORes:
+        type: object
+        properties:
+          status:
+            type: string
+            example: seen
+    Error400:
+      type: object
+      properties:
+        status:
+          type: integer
+          example: 400
+        message:
+          type: string
+          example: Bad request
+    Error401:
+        type: object
+        properties:
+          status:
+            type: integer
+            example: 401
+          message:
+            type: string
+            example: Unauthorized
+    Error403:
+        type: object
+        properties:
+          status:
+            type: integer
+            example: 403
+          message:
+            type: string
+            example: Forbidden
+    Error422:
+        type: object
+        properties:
+          status:
+            type: integer
+            example: 422
+          message:
+            type: string
+            example: Unprocessable Entity
+    Error500:
+        type: object
+        properties:
+          status:
+            type: integer
+            example: 500
+          message:
+            type: string
+            example: Internal Server Error

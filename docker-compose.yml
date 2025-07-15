@@ -1,0 +1,108 @@
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+  redis-exporter:
+    image: oliver006/redis_exporter
+    ports:
+      - "9121:9121"
+    command:
+      - '--redis.addr=redis://notification_redis:6379'
+    depends_on:
+      - redis
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+  postgres:
+      image: postgres:15
+      container_name: notification_postgres
+      environment:
+        POSTGRES_USER: ${PS_USER}
+        POSTGRES_PASSWORD: ${PS_PASS}
+        POSTGRES_DB: ${PS_DB}
+      ports:
+        - "5432:5432"
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.0.1
+    container_name: notification_zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+  kafka:
+    image: confluentinc/cp-kafka:7.0.1
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,PLAINTEXT_HOST://0.0.0.0:29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+  kafka-cli:
+      image: bitnami/kafka:latest
+      container_name: notification_kafka-cli
+      command: sleep infinity
+      depends_on:
+        - kafka
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    ports:
+      - "8088:8080"
+    environment:
+      - KAFKA_CLUSTERS_0_NAME=local
+      - KAFKA_CLUSTERS_0_BOOTSTRAP_SERVERS=kafka:9092
+      - KAFKA_CLUSTERS_0_ZOOKEEPER=zookeeper:2181
+    depends_on:
+      - kafka
+  redis:
+    image: redis:7
+    container_name: notification_redis
+    ports:
+      - "6379:6379"
+  k6:
+    image: grafana/k6
+    command: run /scripts/${K6_SCRIPT}
+    environment:
+      K6_SCRIPT: getl.js  
+    volumes:
+      - ./tests/k6:/scripts
+    networks:
+      - default    
+  dev:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    security_opt:
+    - seccomp=unconfined  
+    volumes:
+      - .:/workspace
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - kafka
+      - postgres
+      - redis
+    tty: true  
+volumes:
+  grafana-storage:
+  postgres_data:
+  prometheus_data:
